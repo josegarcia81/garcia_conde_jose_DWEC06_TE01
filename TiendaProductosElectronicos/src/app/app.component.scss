@@ -1,0 +1,25 @@
+body{
+    margin: 0% auto;
+    text-align: center;
+}
+.titulo{
+     background:url(../../assets/imagen-principal.jpg);
+     width: 100%;
+     height: 4em;
+     color:whitesmoke;
+     align-content: center;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    a{
+        margin: 2em;
+        text-decoration:none;
+        :hover{
+            color: rgb(0, 0, 0);
+        }
+    }
+}

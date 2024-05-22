@@ -1,0 +1,16 @@
+<article class="titulo" [routerLink]="['/']">
+    <h1>{{ title }}</h1>
+    <!-- <img src="../assets/imagen-principal.jpg"/> -->
+</article>
+
+<!-- MENU -->
+<nav>
+    <a [routerLink]="['/']" >Inicio</a>
+    <a [routerLink]="['/moviles/smartphones']" >Moviles</a>
+    <a [routerLink]="['/ordenadores/laptops']" >Ordenadores</a>
+    <a [routerLink]="['/contacto']" >Contacto</a>
+    <a [routerLink]="['/admin']" >Admin</a>
+</nav>
+
+
+<router-outlet/>
