@@ -1,1 +1,11 @@
 <p>moviles works!</p>
+
+<section class="moviles">
+    <article *ngFor="let z of moviles_result" >
+        <img src={{z.images[1]}} alt="moviles">
+        <h3>{{z.title}}</h3>
+        <p>{{z.description}}</p>
+        <strong><p>{{z.price}} - €</p></strong>
+        <input type="button" value="Comprar" >
+    </article>
+</section>

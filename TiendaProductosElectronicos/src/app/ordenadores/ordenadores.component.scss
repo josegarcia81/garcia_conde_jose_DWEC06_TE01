@@ -1,0 +1,16 @@
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    img{
+        height: 8em;
+    }
+    p{
+        width: 22em;
+        margin: 1em;
+    }
+    input{
+        margin: 1em;
+        width: 5em;
+    }
+}
