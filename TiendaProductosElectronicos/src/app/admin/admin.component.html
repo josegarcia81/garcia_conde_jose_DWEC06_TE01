@@ -1,4 +1,23 @@
-<p>admin works!</p>
+<h1>Gestionar productos</h1>
+
+<form #formContacto = "ngForm" >
+    <label for="nombre">id:</label>
+    <input type="text" name="nombre" [(ngModel)]="this.gestionarProducto.id"><br>
+
+    <label for="apellido">Nombre producto:</label>
+    <input type="text" name="apellido" [(ngModel)]="this.gestionarProducto.title" ><br>
+
+    <label for="correoElectronico">Precio:</label>
+    <input type="text" name="correoElectronico" [(ngModel)]="this.gestionarProducto.price" ><br>
+
+    <label for="mensaje">Descripcion:</label><br>
+    <textarea name="mensaje" [(ngModel)]="this.gestionarProducto.description" ></textarea><br>
+
+    
+    <!-- <input type="submit" value="Enviar"><br> -->
+
+
+</form>
 
 <input type="button" (click)="update()" value="Update"/>
 <input type="button" (click)="delete()" value="Delete"/>

@@ -1,3 +1,11 @@
-label, input{
+label, input, textarea{
     margin: 5px;
+}
+  
+input:invalid:required {
+    border: 2px solid rgb(129, 128, 128);
+}
+
+textarea, input:valid {
+border: 2px solid black;
 }

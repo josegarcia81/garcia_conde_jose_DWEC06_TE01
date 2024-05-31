@@ -13,9 +13,11 @@ export class AdminComponent{
 
   public productos : Array<any> = [];
   public mapped_result : Array<Producto> = [];
-  
+  public gestionarProducto : Producto;
 
-  constructor(private _consultaServicio : ConsultasService){}
+  constructor(private _consultaServicio : ConsultasService){
+    this.gestionarProducto = new Producto(0,"","",0,[]);
+  }
 
   ngOnInit() : void{
     this._consultaServicio.getProducts().subscribe(
@@ -38,18 +40,18 @@ export class AdminComponent{
 
   create(){
     let dataCreate : any = {
-      "title": "iPone 10",
-      "description": "Hola",
-      "price": 1000
+      "title": this.gestionarProducto.title,
+      "description": this.gestionarProducto.description,
+      "price": this.gestionarProducto.price
      }
 
     this._consultaServicio.create(dataCreate).subscribe({
       next : data =>{
         console.log("Create",data)
         if (data.id != ""){
-          alert("Producto Creado Correctamente");
+          alert("Producto Creado Correctamente id: " + data.id);
         } else {
-          alert("Problema al Crear el Producto");
+          alert("Problema al Crear el Producto Revise los Campos");
         }
       },
       error : error =>{
@@ -67,31 +69,28 @@ export class AdminComponent{
   }
 
   update(){
-    let id :string = "1";
+    let id :string = this.gestionarProducto.id.toString();
     let dataSend : any = {
-      "title": "iPone 10",
-      "description": "Hola",
-      "price": 1000
+      "title": this.gestionarProducto.title,
+      "description": this.gestionarProducto.description,
+      "price": this.gestionarProducto.price
      }
     this._consultaServicio.update(id,dataSend).subscribe({
       next : data =>{
         console.log("update",data)
-        if (data.title == dataSend.title){
-          alert("Producto Actualizado");
-        } else {
-          alert("Problema al Actualizar el Producto");
-        }
+        alert("Producto Actualizado \nNombre: "+data.title+"\nPrecio: "+data.price+" \nDescripcion: "+data.description);
+        
       },
       error : error =>{
         console.log(<any>error);
-        alert("Problema al Actualizar el Producto");
+        alert("Problema al Actualizar el Producto, indique un id correcto");
       }
 
     });
   }
 
   delete(){
-    let id :string = "1";
+    let id :string = this.gestionarProducto.id.toString();
     
     this._consultaServicio.delete(id).subscribe({
       next : data =>{
@@ -104,11 +103,16 @@ export class AdminComponent{
       },
       error : error =>{
         console.log(<any>error);
+        alert(error.message+" id no valido");
       }
     });
   }
 
   search(){
-    
+    // let id = this.mapped_result.map(function(element,this.gestionarProducto){
+    //   if (element.title == gestionarProducto.){
+
+    //   }
+    // })
   }
 }
