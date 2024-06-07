@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 // Imports para la consulta //
 import { Producto } from '../models/Producto'; 
 import { ConsultasService } from '../services/consultas.service';
+//import { AdminComponent } from '../admin/admin.component';
 
 @Component({
   selector: 'app-ordenadores',
@@ -15,21 +16,23 @@ export class OrdenadoresComponent {
   // Variables para el paso de parametros por url //
   private _route : ActivatedRoute;
   private _router : Router;
-  private _consultaServicio : ConsultasService
-
+  private _consultaServicio : ConsultasService;
+  //private _mapped_result : AdminComponent;
   public nombreUrl : string = "";
 
     // Variable para la consulta //
   public productos : Array<any> = [];
   public ordenadores_result : Array<Producto> = [];
 
-  constructor (_route : ActivatedRoute, _router : Router, _consultaServicio : ConsultasService){
-  this._route =_route;
-  this._router =_router;
-  this._consultaServicio = _consultaServicio;
+  constructor (_route : ActivatedRoute, _router : Router, _consultaServicio : ConsultasService/*, _mapped_result : AdminComponent*/){
+    this._route =_route;
+    this._router =_router;
+    this._consultaServicio = _consultaServicio;
+    //this._mapped_result = _mapped_result;
   }
 
   ngOnInit():void{
+    //console.log(this._mapped_result);
     this._route.params.subscribe((params:Params)=>{
       console.log(params);
       this.nombreUrl = "category/"+params["categoria"]// nombre que le he dado al dato que se va a recibir en app.routings.ts

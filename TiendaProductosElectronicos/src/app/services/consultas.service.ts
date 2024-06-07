@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";// en app.module 
 import { Observable } from "rxjs";
 import { Producto } from "../models/Producto";
 
-@Injectable()// Patron singleton 
+@Injectable()// Patron singelton 
 export class ConsultasService{
 
     //public productos : Array<Producto>;

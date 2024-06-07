@@ -5,6 +5,11 @@ section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    article{
+        margin-bottom: 3%;
+        margin-top: 1%;
+        height: 400px;
+    }
     img{
         height: 8em;
     }

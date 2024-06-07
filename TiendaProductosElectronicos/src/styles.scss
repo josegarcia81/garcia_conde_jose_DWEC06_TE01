@@ -3,3 +3,18 @@ body{
     margin: 0% auto;
     text-align: center;
 }
+.hoover-nav{
+    padding: 5px;
+    border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+    
+    
+    &:hover
+{
+        color: rgb(255, 255, 255);
+        background-color: rgb(128, 128, 128);
+    }
+}
