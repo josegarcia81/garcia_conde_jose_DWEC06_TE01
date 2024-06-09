@@ -11,7 +11,7 @@ import { ConsultasService } from '../services/consultas.service';
   styleUrl: './moviles.component.scss',
   providers:[ConsultasService] // importante poner sino no funciona
 })
-export class MovilesComponent {
+export class MovilesComponent implements OnInit{
 
   // Variables para el paso de parametros por url //
   private _route : ActivatedRoute;
