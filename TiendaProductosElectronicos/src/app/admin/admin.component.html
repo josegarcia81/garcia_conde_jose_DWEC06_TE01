@@ -11,14 +11,19 @@
     <input type="text" name="correoElectronico" [(ngModel)]="this.gestionarProducto.price" ><br>
 
     <label for="mensaje">Descripcion:</label><br>
-    <textarea name="mensaje" [(ngModel)]="this.gestionarProducto.description" ></textarea><br>
-
-    
-    <!-- <input type="submit" value="Enviar"><br> -->
-
+    <textarea type="textarea" name="mensaje" [(ngModel)]="this.gestionarProducto.description" ></textarea><br>
 
 </form>
 
 <input type="button" (click)="update()" value="Update"/>
 <input type="button" (click)="delete()" value="Delete"/>
 <input type="button" (click)="create()" value="Add"/>
+
+<ul>
+    <li *ngFor="let z of mapped_result" style="max-width: 500px;display: flex;flex-direction: row;margin: 5px;">
+        <p>{{z.id}}</p>
+        <p>{{z.title}}</p>
+        <p>{{z.description}}</p>
+        <p>{{z.price}}</p>
+    </li>
+</ul>

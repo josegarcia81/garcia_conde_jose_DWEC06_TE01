@@ -13,10 +13,10 @@ export class AdminComponent{
 
   public productos : Array<any> = [];
   public mapped_result : Array<Producto> = [];
-  public gestionarProducto : Producto;
+  public gestionarProducto : Producto = new Producto(0,"","",0,[])
 
   constructor(private _consultaServicio : ConsultasService){
-    this.gestionarProducto = new Producto(0,"","",0,[]);
+    // this.gestionarProducto = new Producto(0,"","",0,[]);
   }
 
   ngOnInit() : void{
@@ -33,7 +33,7 @@ export class AdminComponent{
       },
       error => {
         console.log(<any>error);
-        alert("Error en la carga de datos")
+        //alert("Error en la carga de datos")
       }
     );
   }
@@ -64,7 +64,8 @@ export class AdminComponent{
 
   read(){
     this._consultaServicio.getProducts().subscribe({
-
+      next : data =>{console.log(data)},
+      error : error=>{console.log(error)}
     });
   }
 
