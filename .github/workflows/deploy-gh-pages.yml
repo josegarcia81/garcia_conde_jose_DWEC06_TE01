@@ -26,10 +26,10 @@ jobs:
       - name: Build Angular project
         run: |
           cd TiendaProductosElectronicos
-          npm run build -- --output-path=dist --base-href=/
+          npm run build -- --output-path=dist/TiendaProductosElectronicos --base-href=/garcia_conde_jose_DWEC06_TE01/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./TiendaProductosElectronicos/dist
+          publish_dir: ./TiendaProductosElectronicos/dist/TiendaProductosElectronicos
