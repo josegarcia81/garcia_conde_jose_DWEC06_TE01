@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/",
+    "/admin",
+    "/contacto",
+    "/moviles",
+    "/ordenadores"
+  ]
+}
