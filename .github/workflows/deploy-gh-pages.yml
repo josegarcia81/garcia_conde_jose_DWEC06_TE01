@@ -19,16 +19,22 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd TiendaProductosElectronicos
+          npm install
 
       - name: Build Angular project
-        run: npm run build -- --base-href=/garcia_conde_jose_DWEC06_TE01/
+        run: |
+          cd TiendaProductosElectronicos
+          npm run build -- --base-href=/garcia_conde_jose_DWEC06_TE01/
 
       - name: Show build output
-        run: ls -l dist/tienda-productos-electronicos || echo "NO HAY CARPETA DE BUILD"
+        run: |
+          cd TiendaProductosElectronicos
+          ls -l dist/tienda-productos-electronicos || echo "NO HAY CARPETA DE BUILD"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/tienda-productos-electronicos
+          publish_dir: ./TiendaProductosElectronicos/dist/tienda-productos-electronicos
